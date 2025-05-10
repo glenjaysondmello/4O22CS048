@@ -1,14 +1,11 @@
 const express = require("express");
-const { fetchFibo } = require("../services/fibo");
-const { fetchEven } = require("../services/even");
-const { fetchRandom } = require("../services/random");
-const { fetchPrime } = require("../services/prime");
+const { fibo, even, rand, prime } = require("../controllers/numController");
 
 const router = express.Router();
 
-router.post("/f", fetchFibo);
-router.get("/fe", fetchEven);
-router.get("/r", fetchRandom);
-router.get("/p", fetchPrime);
+router.post("/f", fibo);
+router.get("/e", even);
+router.get("/r", rand);
+router.get("/p", prime);
 
 module.exports = router;

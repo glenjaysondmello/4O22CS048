@@ -2,16 +2,18 @@ const axios = require("axios");
 const window = require("../utils/window");
 
 const fetchPrime = async () => {
-  const response = await axios.get(
-    "http://20.244.56.144/evaluation-service/primes",
-    {
-      timeout: 500,
-    }
-  );
+  try {
+    const response = await axios.get(
+      "http://20.244.56.144/evaluation-service/prime",
+      {
+        timeout: 500,
+      }
+    );
 
-  added = window.add(response.data.numbers);
-
-  return added;
+    return response.data;
+  } catch (error) {
+    console.error(error);
+  }
 };
 
 module.exports = { fetchPrime };
