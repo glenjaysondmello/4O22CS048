@@ -3,9 +3,9 @@ const { fibo, even, rand, prime } = require("../controllers/numController");
 
 const router = express.Router();
 
-router.post("/f", fibo);
-router.get("/e", even);
-router.get("/r", rand);
-router.get("/p", prime);
+router.route("/f").get(fibo);
+router.route("/e").get(even);
+router.route("/p").get(prime);
+router.route("/r").get(rand);
 
 module.exports = router;

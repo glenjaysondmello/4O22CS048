@@ -5,24 +5,25 @@ class Window {
     this.window = [];
   }
 
-  add(num) {
-    if (!num) return false;
-
-    if (num.length > MAX_SIZE) return false;
-
-    this.window.push(num);
-  }
-
-  avg(num) {
-    sum = 0;
-    for (let i = 0; i < num.length - 1; i++) {
-      sum += num[i];
+  add(nums) {
+    if (!Array.isArray(nums) || nums.length === 0) return false;
+    for (const num of nums) {
+      if (this.window.length >= MAX_SIZE) {
+        this.window.shift();
+      }
+      this.window.push(num);
     }
-    return sum / num.length;
+    return true;
   }
 
-  get(num) {
-    return num;
+  avg() {
+    if (this.window.length === 0) return 0;
+    const sum = this.window.reduce((acc, val) => acc + val, 0);
+    return sum / this.window.length;
+  }
+
+  get() {
+    return this.window;
   }
 }
 
