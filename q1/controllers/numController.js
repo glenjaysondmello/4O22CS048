@@ -12,8 +12,8 @@ const fibo = async (req, res) => {
     avg = window.avg(nums);
 
     return res.json({
-      windowCurrentState: nums,
-      added: added,
+      windowCurrentState: added,
+      window: window.get(),
       avg: avg,
     });
   } catch (error) {
