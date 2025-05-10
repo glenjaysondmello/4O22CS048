@@ -1,9 +1,9 @@
 const axios = require("axios");
 
-const fetchEven = async () => {
+const fetchPrime = async () => {
   try {
     const response = await axios.get(
-      "http://20.244.56.144/evaluation-service/even",
+      "http://20.244.56.144/evaluation-service/prime",
       { timeout: 500 }
     );
     return response.data.numbers;
@@ -12,3 +12,5 @@ const fetchEven = async () => {
     return [];
   }
 };
+
+module.exports = { fetchPrime };

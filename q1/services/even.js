@@ -12,3 +12,5 @@ const fetchEven = async () => {
     return [];
   }
 };
+
+module.exports = { fetchEven };

@@ -1,6 +1,6 @@
 const { fetchFibo } = require("../services/fibo");
 const { fetchEven } = require("../services/even");
-const { fetchRandom } = require("../services/random");
+const { fetchRand } = require("../services/random");
 const { fetchPrime } = require("../services/prime");
 const window = require("../utils/window");
 
@@ -23,7 +23,7 @@ const fibo = async (req, res) => {
 
 const rand = async (req, res) => {
   try {
-    const nums = await fetchRandom();
+    const nums = await fetchRand();
 
     added = window.add(nums);
     avg = window.avg(nums);
