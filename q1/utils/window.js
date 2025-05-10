@@ -21,8 +21,8 @@ class Window {
     return sum / num.length;
   }
 
-  get(num) {
-    return num;
+  get() {
+    return this.window;
   }
 }
 
