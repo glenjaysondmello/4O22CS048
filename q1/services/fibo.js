@@ -1,4 +1,5 @@
 const axios = require("axios");
+const window = require("../utils/window");
 
 const fetchFibo = async () => {
   const response = await axios.get(
@@ -8,7 +9,9 @@ const fetchFibo = async () => {
     }
   );
 
-  return response.data;
+  added = window.add(response.data.numbers);
+
+  return added;
 };
 
 module.exports = { fetchFibo };
